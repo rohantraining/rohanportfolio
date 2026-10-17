@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description"
+    content="Portfolio of Rohan Chandrashekhar Nashikkar — Software Engineer specializing in Java, Spring Boot, microservices, REST APIs, SQL, and cloud-based backend systems." />
+  <meta property="og:title" content="Rohan Nashikkar | Software Engineer" />
+  <meta property="og:description"
+    content="Java Backend Engineer building reliable APIs, microservices, and cloud-connected applications." />
+  <meta property="og:type" content="website" />
+  <title>Rohan Nashikkar | Software Engineer</title>
+  <style>
+    :root {
+      --bg: #080d1a;
+      --panel: rgba(17, 26, 48, .78);
+      --panel-solid: #111a30;
+      --text: #f3f6ff;
+      --muted: #a8b3ca;
+      --line: rgba(174, 194, 232, .16);
+      --blue: #79a9ff;
+      --cyan: #67e8f9;
+      --green: #91f2c3;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .25);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 12% 0%, rgba(70, 105, 210, .19), transparent 34rem),
+        radial-gradient(ellipse at 100% 35%, rgba(43, 183, 208, .10), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 13, 26, .82);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 37px;
+      height: 37px;
+      border-radius: 12px;
+      color: #07101c;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      font-size: 14px;
+      box-shadow: 0 8px 26px rgba(103, 232, 249, .17);
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .navlinks a:hover {
+      color: var(--text);
+    }
+
+    .navlinks .nav-cta {
+      color: #07101c;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      padding: 9px 14px;
+      border-radius: 10px;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: var(--panel);
+      padding: 8px 11px;
+      border-radius: 10px;
+      font-size: 19px;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 92px 0 78px;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      align-items: center;
+      gap: 52px;
+      min-height: 590px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      border: 1px solid rgba(103, 232, 249, .23);
+      background: rgba(103, 232, 249, .06);
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
+    .pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 5px rgba(145, 242, 195, .09);
+    }
+
+    h1 {
+      margin: 23px 0 15px;
+      font-size: clamp(42px, 6vw, 70px);
+      letter-spacing: -.065em;
+      line-height: 1.04;
+    }
+
+    .gradient-text {
+      background: linear-gradient(105deg, #f6f8ff 10%, #a7c8ff 54%, #67e8f9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-role {
+      color: var(--muted);
+      font-size: clamp(18px, 2.2vw, 23px);
+      font-weight: 600;
+      letter-spacing: -.025em;
+    }
+
+    .hero-copy {
+      color: #b5bfd3;
+      max-width: 650px;
+      margin: 19px 0 27px;
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 12px 17px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      border-color: rgba(103, 232, 249, .45);
+    }
+
+    .btn-primary {
+      color: #07101c;
+      border: 0;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      box-shadow: 0 10px 30px rgba(103, 232, 249, .12);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, .035);
+      color: var(--text);
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-links a:hover {
+      color: var(--cyan);
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 25px;
+      border: 1px solid rgba(167, 200, 255, .2);
+      border-radius: 28px;
+      background: linear-gradient(155deg, rgba(25, 39, 70, .9), rgba(12, 20, 39, .86));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-card:before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -90px;
+      top: -95px;
+      background: rgba(103, 232, 249, .12);
+      filter: blur(25px);
+      border-radius: 50%;
+    }
+
+    .code-head {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding-bottom: 17px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff7b86;
+    }
+
+    .dot:nth-child(2) {
+      background: #ffd36f;
+    }
+
+    .dot:nth-child(3) {
+      background: #80e5b2;
+    }
+
+    .code-title {
+      margin-left: auto;
+    }
+
+    .code {
+      font: 12px/2.05 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      padding-top: 15px;
+      color: #dce8ff;
+      overflow-wrap: anywhere;
+    }
+
+    .code .key {
+      color: #82c7ff;
+    }
+
+    .code .value {
+      color: #a3f1d0;
+    }
+
+    .code .comment {
+      color: #7c8aa8;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 13px 10px;
+      background: rgba(255, 255, 255, .025);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 19px;
+      letter-spacing: -.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      color: var(--cyan);
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+
+    h2 {
+      margin: 7px 0 0;
+      font-size: clamp(29px, 4vw, 42px);
+      letter-spacing: -.05em;
+      line-height: 1.15;
+    }
+
+    .section-intro {
+      max-width: 500px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 42px rgba(0, 0, 0, .08);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+    }
+
+    .about-card {
+      padding: 26px;
+    }
+
+    .about-card p {
+      color: #b6c1d5;
+      margin: 0 0 14px;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .focus-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 18px;
+    }
+
+    .focus-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #dbe4f5;
+      font-size: 13px;
+    }
+
+    .check {
+      display: grid;
+      place-items: center;
+      flex: 0 0 22px;
+      height: 22px;
+      border-radius: 7px;
+      background: rgba(103, 232, 249, .1);
+      color: var(--cyan);
+      font-weight: 900;
+    }
+
+    .quick-facts {
+      padding: 23px;
+      display: grid;
+      gap: 0;
+    }
+
+    .fact {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact:last-child {
+      border-bottom: 0;
+    }
+
+    .fact span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+
+    .fact strong {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .skill-card {
+      padding: 23px;
+    }
+
+    .skill-card h3 {
+      margin: 0 0 14px;
+      font-size: 16px;
+      letter-spacing: -.02em;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 12px;
+      margin: -7px 0 14px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(157, 184, 232, .17);
+      background: rgba(143, 171, 221, .055);
+      color: #d9e5fa;
+      border-radius: 9px;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .chip.primary {
+      color: #b7e7ff;
+      border-color: rgba(103, 232, 249, .22);
+      background: rgba(103, 232, 249, .07);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .job {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 25px;
+      padding: 25px;
+    }
+
+    .job-meta {
+      border-right: 1px solid var(--line);
+      padding-right: 20px;
+    }
+
+    .job-date {
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .job-meta h3 {
+      margin: 8px 0 4px;
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .job-meta p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 12px;
+    }
+
+    .job-content h4 {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .job-content ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #b7c3d8;
+      font-size: 13px;
+    }
+
+    .job-content li {
+      margin: 7px 0;
+      padding-left: 3px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .project {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .project-art {
+      height: 155px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(140deg, rgba(91, 131, 222, .19), rgba(103, 232, 249, .06));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-art:before,
+    .project-art:after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(170, 202, 255, .18);
+      border-radius: 18px;
+      transform: rotate(-12deg);
+      width: 180px;
+      height: 95px;
+    }
+
+    .project-art:after {
+      transform: rotate(10deg);
+      width: 130px;
+      height: 72px;
+    }
+
+    .project-icon {
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 66px;
+      height: 66px;
+      border: 1px solid rgba(160, 211, 255, .28);
+      border-radius: 20px;
+      background: rgba(9, 17, 35, .8);
+      font-size: 27px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, .2);
+    }
+
+    .project-body {
+      padding: 21px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-body h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      letter-spacing: -.025em;
+    }
+
+    .project-body p {
+      margin: 0 0 15px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .project-body .chips {
+      margin-bottom: 17px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 9px;
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+
+    .small-link {
+      font-size: 11px;
+      font-weight: 800;
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      border-radius: 9px;
+      color: #d9e8ff;
+    }
+
+    .small-link:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .project-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 16px;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .edu {
+      padding: 23px;
+    }
+
+    .edu .edu-label {
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .edu h3 {
+      margin: 9px 0 5px;
+      font-size: 17px;
+    }
+
+    .edu p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .cert-box {
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .cert-box h3 {
+      margin: 0 0 6px;
+      font-size: 17px;
+    }
+
+    .cert-box p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 18px;
+    }
+
+    .contact-copy {
+      padding: 27px;
+    }
+
+    .contact-copy p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .025);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link span {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: rgba(103, 232, 249, .09);
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      padding: 27px;
+    }
+
+    .contact-form label {
+      display: block;
+      color: #dce6f8;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: rgba(5, 10, 22, .65);
+      color: var(--text);
+      padding: 12px 13px;
+      font: inherit;
+      font-size: 13px;
+      outline: none;
+      margin-bottom: 14px;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: rgba(103, 232, 249, .65);
+    }
+
+    .contact-form textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .form-hint {
+      font-size: 11px;
+      color: var(--muted);
+      margin: 10px 0 0;
+    }
+
+    footer {
+      padding: 25px 0 38px;
+      color: #8794ad;
+      font-size: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .backtop {
+      color: var(--cyan);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translate(-50%, 20px);
+      opacity: 0;
+      pointer-events: none;
+      padding: 11px 15px;
+      border: 1px solid var(--line);
+      background: #17233d;
+      color: var(--text);
+      border-radius: 12px;
+      z-index: 50;
+      font-size: 13px;
+      transition: .25s;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .project-gallery {
+      position: relative;
+      height: 190px;
+      background: #0c1428;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+
+    /* Project screenshot gallery */
+    .project-gallery {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      background: #ffffff;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* Horizontal image slider */
+    .gallery-track {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      overscroll-behavior-x: contain;
+      background: #ffffff;
+    }
+
+    .gallery-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Every screenshot occupies exactly one gallery width */
+    .gallery-slide {
+      position: relative;
+      flex: 0 0 100%;
+      min-width: 0;
+      height: 100%;
+      overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      background: #ffffff;
+    }
+
+    /* Show the complete screenshot without cropping */
+
+    .gallery-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+
+    /* Previous and next controls */
+    .gallery-controls {
+      position: absolute;
+      inset: auto 10px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .gallery-btn {
+      pointer-events: auto;
+      width: 31px;
+      height: 31px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: white;
+      background: rgba(5, 10, 22, .78);
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .gallery-dots {
+      display: flex;
+      gap: 5px;
+      padding: 6px 9px;
+      border-radius: 99px;
+      background: rgba(5, 10, 22, .72);
+    }
+
+    .gallery-dot {
+      width: 6px;
+      height: 6px;
+      border: 0;
+      padding: 0;
+      border-radius: 50%;
+      background: #8190aa;
+      cursor: pointer;
+    }
+
+    .gallery-dot.active {
+      background: var(--cyan);
+      transform: scale(1.25);
+    }
+
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .cert-card {
+      padding: 20px;
+      min-height: 165px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cert-icon {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(103, 232, 249, .1);
+      color: var(--cyan);
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    .cert-card h3 {
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0 0 6px;
+    }
+
+    .cert-card p {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0 0 14px;
+    }
+
+    .cert-card .small-link {
+      margin-top: auto;
+    }
+
+    .project-note {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 620px) {
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-gallery {
+        height: 210px;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 66px;
+        gap: 35px;
+        min-height: auto;
+      }
+
+      .hero-card {
+        max-width: 550px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .job {
+        grid-template-columns: 150px 1fr;
+      }
+
+      .navlinks {
+        gap: 13px;
+      }
+
+      .navlinks a {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .navlinks {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        padding: 16px 22px 20px;
+        background: rgba(8, 13, 26, .98);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .navlinks.open {
+        display: flex;
+      }
+
+      .navlinks a {
+        padding: 11px 5px;
+        font-size: 14px;
+      }
+
+      .navlinks .nav-cta {
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .hero {
+        padding: 54px 0 45px;
+      }
+
+      h1 {
+        font-size: clamp(41px, 12vw, 59px);
+      }
+
+      .hero-copy {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 51px 0;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-intro {
+        margin-top: 12px;
+      }
+
+      .skills-grid,
+      .project-grid,
+      .edu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .job {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 21px;
+      }
+
+      .job-meta {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 0 0 13px;
+      }
+
+      .stats {
+        gap: 7px;
+      }
+
+      .stat {
+        padding: 11px 8px;
+      }
+
+      .stat strong {
+        font-size: 17px;
+      }
+
+      .stat span {
+        font-size: 9px;
+      }
+
+      .cert-box {
+        display: block;
+      }
+
+      .cert-box .btn {
+        margin-top: 17px;
+      }
+
+      .contact-copy,
+      .contact-form,
+      .about-card {
+        padding: 21px;
+      }
+
+      .hero-actions .btn {
+        flex: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Rohan Nashikkar home">
+        <span class="brand-mark">RN</span><span>Rohan Nashikkar<span style="color:var(--cyan)">.</span></span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="navlinks" id="navLinks" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a
+          href="#projects">Projects</a><a href="#education">Education</a><a class="nav-cta" href="#contact">Contact me
+          ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="pulse"></span> Software Engineer · Backend Development</div>
+        <h1>Hi, I'm <span class="gradient-text">Rohan.</span></h1>
+        <div class="hero-role">I build reliable backend systems, APIs & microservices.</div>
+        <p class="hero-copy">Software Engineer with 2+ years of experience building backend services using Java and
+          Spring Boot. I work on REST APIs, SQL databases, production troubleshooting, and cloud-connected order
+          management platforms.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="btn btn-secondary" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-secondary" href="assets/Rohan_Nashikkar Resume.pdf" target="_blank" rel="noopener"
+            id="resumeBtn">View resume ↗</a>
+        </div>
+        <div class="hero-links">
+          <a href="http://www.linkedin.com/in/rohan-nashikkar-314766217" target="_blank" rel="noopener">↗ LinkedIn</a>
+          <a href="https://github.com/rohantraining" target="_blank" rel="noopener">↗ GitHub</a>
+          <a href="mailto:rohancnashikkar@gmail.com">✉ Email</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Developer profile preview">
+        <div class="code-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span
+            class="code-title">developer-profile.json</span></div>
+        <div class="code">
+          <div><span class="comment">// A little about what I do</span></div>
+          <div>{</div>
+          <div>&nbsp; <span class="key">"name"</span>: <span class="value">"Rohan Nashikkar"</span>,</div>
+          <div>&nbsp; <span class="key">"role"</span>: <span class="value">"Software Engineer"</span>,</div>
+          <div>&nbsp; <span class="key">"primaryStack"</span>: [</div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="value">"Java"</span>, <span class="value">"Spring Boot"</span>,</div>
+          <div>&nbsp;&nbsp;&nbsp; <span class="value">"Microservices"</span>, <span class="value">"REST APIs"</span>
+          </div>
+          <div>&nbsp; ],</div>
+          <div>&nbsp; <span class="key">"focus"</span>: <span class="value">"Reliable backend systems"</span></div>
+          <div>}</div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>2+</strong><span>Years' experience</span></div>
+          <div class="stat"><strong>ELK</strong><span>Elasticsearch / Kibana · X4V</span></div>
+          <div class="stat"><strong>GCP</strong><span>Cloud exposure</span></div>
+        </div>
+        <p style="font-size:10px;color:#8290aa;margin:12px 0 0">Hands-on enterprise exposure across backend services,
+          search indexes, and cloud-connected systems.</p>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">A quick introduction</div>
+            <h2>About me</h2>
+          </div>
+          <p class="section-intro">Focused on building dependable software, solving production problems, and
+            continuously improving code quality.</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel about-card reveal">
+            <p>Software Engineer with 2+ years of experience building backend services using Java and Spring Boot. I
+              work on REST APIs, SQL databases, production troubleshooting, and cloud-connected order management
+              platforms.</p>
+            <p>I enjoy understanding how systems work end to end, finding the cause of complex issues, and delivering
+              practical improvements that make applications more reliable and maintainable.</p>
+            <div class="focus-list">
+              <div class="focus-item"><span class="check">✓</span><span>Backend development with Java, Spring Boot, and
+                  microservices</span></div>
+              <div class="focus-item"><span class="check">✓</span><span>API performance, data consistency, and
+                  production troubleshooting</span></div>
+              <div class="focus-item"><span class="check">✓</span><span>Testing, collaboration, and continuous
+                  learning</span></div>
+            </div>
+          </article>
+          <aside class="panel quick-facts reveal">
+            <div class="fact"><span>Current role</span><strong>Software Engineer · Ingram Micro</strong></div>
+            <div class="fact"><span>Location</span><strong>Mumbai, Maharashtra, India</strong></div>
+            <div class="fact"><span>Education</span><strong>B.E. Information Technology</strong></div>
+            <div class="fact"><span>Primary focus</span><strong>Java Backend Engineering</strong></div>
+            <div class="fact"><span>Open to</span><strong>Software Engineer / Backend roles</strong></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">My toolkit</div>
+            <h2>Skills & technologies</h2>
+          </div>
+          <p class="section-intro">Technologies used in my professional work and personal projects. Skill depth varies
+            by tool.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="panel skill-card reveal">
+            <h3>01 · Core backend</h3>
+            <p>My primary professional skill set</p>
+            <div class="chips"><span class="chip primary">Java</span><span class="chip primary">Spring Boot</span><span
+                class="chip primary">Microservices</span><span class="chip primary">REST APIs</span><span
+                class="chip primary">API Development & Testing</span><span class="chip">OOP</span><span
+                class="chip">Data Structures & Algorithms</span><span class="chip">System Design</span><span
+                class="chip">SDLC</span><span class="chip">Database Optimization</span></div>
+          </article>
+          <article class="panel skill-card reveal">
+            <h3>02 · Databases & search</h3>
+            <p>Relational data and search/indexing tools</p>
+            <div class="chips"><span class="chip primary">SQL</span><span class="chip primary">PostgreSQL</span><span
+                class="chip primary">MS SQL Server (MSSQL)</span><span class="chip">Elasticsearch</span><span
+                class="chip">Kibana</span><span class="chip">Oracle Database</span></div>
+          </article>
+          <article class="panel skill-card reveal">
+            <h3>03 · Cloud & monitoring</h3>
+            <p>Exposure through enterprise application work</p>
+            <div class="chips"><span class="chip">Google Cloud Platform (GCP)</span><span class="chip">GCP
+                Pub/Sub</span><span class="chip">GCP Cloud Scheduler</span><span class="chip">Datadog</span></div>
+          </article>
+          <article class="panel skill-card reveal">
+            <h3>04 · Tools, testing & additional skills</h3>
+            <p>Development workflow and project technologies</p>
+            <div class="chips"><span class="chip">Git</span><span class="chip">JUnit</span><span
+                class="chip">Postman</span><span class="chip">Python</span><span class="chip">JavaScript</span><span
+                class="chip">React</span><span class="chip">GraphQL</span><span class="chip">Agile/Scrum</span><span
+                class="chip">Apache Kafka</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Where I've worked</div>
+            <h2>Experience</h2>
+          </div>
+          <p class="section-intro">Enterprise software development, application enhancements, integrations, and
+            operational support.</p>
+        </div>
+        <div class="timeline">
+          <article class="panel job reveal">
+            <div class="job-meta">
+              <div class="job-date">Aug 2025 – Present</div>
+              <h3>Software Engineer</h3>
+              <p>Ingram Micro Platform Technology India Pvt. Ltd.<br />Mumbai, India</p>
+            </div>
+            <div class="job-content">
+              <h4>X4C / X4A · Order Status & Tracking</h4>
+              <ul>
+                <li>Resolved B2B defects and delivered enhancements, including REST API (CRUD) development and new API
+                  fields.</li>
+                <li>Resolved vendor issues across major vendors, including Lenovo, Apple, and Cisco, and enhanced Lenovo
+                  tracking details.</li>
+                <li>Delivered reporting enhancements, UAT fixes, translation fixes, and a unified query for Open Order,
+                  Last Day Shipment, and All Order reports.</li>
+                <li>Supported EMEA vendor onboarding and production fixes for the engine layer.</li>
+                <li>Improved JUnit test coverage to 80% across selected Order Status & Tracking repositories.</li>
+                <li>Supported VCAF onboarding for Lenovo across EMEA countries.</li>
+              </ul>
+              <h4 style="margin-top:20px">X4V · Xvantage for Vendors – Orders Module</h4>
+              <ul>
+                <li>Resolved order/data mismatches, improved API and list-page performance, and delivered tracking,
+                  pre-shipment, and ASN enhancements.</li>
+                <li>Updated Elasticsearch/Kibana templates and indexes, helping correct widespread SO-module
+                  order-status inconsistencies through migration to appropriate indexes.</li>
+                <li>Worked with GCP Pub/Sub, Cloud Scheduler jobs, Datadog monitoring, and on-premises-to-GCP migration
+                  activities.</li>
+                <li>Enhanced Excel downloads for multiple countries and supported the Apigee-to-Akamai URL transition.
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="panel job reveal">
+            <div class="job-meta">
+              <div class="job-date">Jul 2024 – Jul 2025</div>
+              <h3>Trainee Software Developer</h3>
+              <p>Ingram Micro Platform Technology India Pvt. Ltd.<br />Mumbai, India</p>
+            </div>
+            <div class="job-content">
+              <h4>Python ETL & Report Harmonization</h4>
+              <ul>
+                <li>Contributed to a report harmonization tool that converted semi-structured text reports into
+                  structured Excel (.xlsx) files.</li>
+                <li>Developed Python scripts to process business reports for India and China regions and generate
+                  configuration files.</li>
+                <li>Supported automated workflows using Windows Task Scheduler to run Python jobs efficiently.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Things I've built</div>
+            <h2>Projects</h2>
+          </div>
+          <p class="section-intro">Personal projects that demonstrate application development, user interfaces, and
+            integration with databases or AI APIs.</p>
+        </div>
+        <div class="project-grid">
+          <article class="panel project reveal">
+            <div class="project-gallery" data-gallery aria-label="Expense Tracker project screenshots">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="assets/projects/expense-tracker-1.png" alt="Expense Tracker screenshot 1">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/expense-tracker-2.png" alt="Expense Tracker screenshot 2">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/expense-tracker-3.png" alt="Expense Tracker screenshot 3">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/expense-tracker-4.png" alt="Expense Tracker screenshot 4">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/expense-tracker-5.png" alt="Expense Tracker screenshot 5">
+                </div>
+              </div>
+              <div class="gallery-controls"><button class="gallery-btn prev" type="button"
+                  aria-label="Previous screenshot">‹</button>
+                <div class="gallery-dots" aria-label="Choose screenshot"></div><button class="gallery-btn next"
+                  type="button" aria-label="Next screenshot">›</button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Expense Tracker System</h3>
+              <p>A personal expense tracker with create, edit, and delete actions, time-based views, and a category-wise
+                income-versus-expenses dashboard.</p>
+              <div class="chips"><span class="chip">React</span><span class="chip">Node.js</span><span
+                  class="chip">Express</span><span class="chip">MongoDB</span></div>
+              <div class="project-actions"><a class="small-link project-repo"
+                  href="https://github.com/rohantraining/mernproject.git" target="_blank" rel="noopener">GitHub / Code
+                  ↗</a></div>
+            </div>
+          </article>
+          <article class="panel project reveal">
+            <div class="project-gallery" data-gallery aria-label="Gemini Clone project screenshots">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="assets/projects/gemini-clone-1.png" alt="Gemini Clone screenshot 1">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/gemini-clone-2.png" alt="Gemini Clone screenshot 2">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/gemini-clone-3.png" alt="Gemini Clone screenshot 3">
+                </div>
+              </div>
+              <div class="gallery-controls"><button class="gallery-btn prev" type="button"
+                  aria-label="Previous screenshot">‹</button>
+                <div class="gallery-dots" aria-label="Choose screenshot"></div><button class="gallery-btn next"
+                  type="button" aria-label="Next screenshot">›</button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Gemini Clone</h3>
+              <p>A React-based AI chat interface built to explore conversational UI and integration with the Gemini 1.5
+                Flash model.</p>
+              <div class="chips"><span class="chip">React</span><span class="chip">JavaScript</span><span
+                  class="chip">Gemini API</span></div>
+              <div class="project-actions"><a class="small-link project-repo"
+                  href="https://github.com/rohantraining/gemini-clone.git" target="_blank" rel="noopener">GitHub / Code
+                  ↗</a></div>
+            </div>
+          </article>
+          <article class="panel project reveal">
+            <div class="project-gallery" data-gallery aria-label="Tour and Travel website screenshots">
+
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="assets/projects/travel-website-1.png" alt="Travel Website screenshot 1">
+                </div>
+
+                <div class="gallery-slide">
+                  <img src="assets/projects/travel-website-2.png" alt="Travel Website screenshot 2">
+                </div>
+
+                <div class="gallery-slide">
+                  <img src="assets/projects/travel-website-3.png" alt="Travel Website screenshot 3">
+                </div>
+
+                <div class="gallery-slide">
+                  <img src="assets/projects/travel-website-4.png" alt="Travel Website screenshot 4">
+                </div>
+
+                <div class="gallery-slide">
+                  <img src="assets/projects/travel-website-5.png" alt="Travel Website screenshot 5">
+                </div>
+
+                <div class="gallery-slide">
+                  <img src="assets/projects/travel-website-6.png" alt="Travel Website screenshot 6">
+                </div>
+              </div>
+
+              <div class="gallery-controls"><button class="gallery-btn prev" type="button"
+                  aria-label="Previous screenshot">‹</button>
+                <div class="gallery-dots" aria-label="Choose screenshot"></div><button class="gallery-btn next"
+                  type="button" aria-label="Next screenshot">›</button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Tour & Travel Hiking Website</h3>
+              <p>A tourism website presenting travel packages, hiking activities, adventure experiences, and practical
+                information for travellers.</p>
+              <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span
+                  class="chip">HTML/CSS</span><span class="chip">JavaScript</span></div>
+              <div class="project-actions"><a class="small-link project-repo"
+                  href="https://github.com/rohantraining/Tour_And_Travel_Hiking_Webiste.git" target="_blank"
+                  rel="noopener">GitHub / Code ↗</a></div>
+            </div>
+          </article>
+          <article class="panel project reveal">
+            <div class="project-gallery" data-gallery aria-label="Harvestify project screenshots">
+              <div class="gallery-track">
+                <div class="gallery-slide">
+                  <img src="assets/projects/harvestify-1.png" alt="Harvestify screenshot 1">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/harvestify-2.png" alt="Harvestify screenshot 2">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/harvestify-3.png" alt="Harvestify screenshot 3">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/harvestify-4.png" alt="Harvestify screenshot 4">
+                </div>
+                <div class="gallery-slide">
+                  <img src="assets/projects/harvestify-5.png" alt="Harvestify screenshot 5">
+                </div>
+              </div>
+              <div class="gallery-controls"><button class="gallery-btn prev" type="button"
+                  aria-label="Previous screenshot">‹</button>
+                <div class="gallery-dots" aria-label="Choose screenshot"></div><button class="gallery-btn next"
+                  type="button" aria-label="Next screenshot">›</button>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>HARVESTIFY · Smart Agriculture</h3>
+              <p>A team academic project exploring crop recommendations, crop disease detection, and community
+                information using machine learning and a web interface.</p>
+              <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span
+                  class="chip">MongoDB</span><span class="chip">HTML/CSS/JS</span><span class="chip">Machine
+                  Learning</span></div>
+              <div class="project-actions"><a class="small-link project-repo"
+                  href="https://github.com/rohantraining/Harvestify.git" target="_blank" rel="noopener">GitHub / Code
+                  ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Learning foundation</div>
+            <h2>Education</h2>
+          </div>
+          <p class="section-intro">Academic background in information technology and software fundamentals.</p>
+        </div>
+        <div class="edu-grid">
+          <article class="panel edu reveal">
+            <div class="edu-label">Jul 2020 – Mar 2024</div>
+            <h3>Bachelor of Engineering — Information Technology</h3>
+            <p>SIES Graduate School of Technology<br />Navi Mumbai, Maharashtra<br />Honours in
+              Blockchain<br /><strong>Academic score: 9.17</strong></p>
+          </article>
+          <article class="panel edu reveal">
+            <div class="edu-label">2018 – 2020 · HSC Science</div>
+            <h3>M.H Junior College</h3>
+            <p>Thane, Maharashtra<br /><strong>Percentage: 80%</strong></p>
+          </article>
+          <article class="panel edu reveal">
+            <div class="edu-label">2008 – 2018</div>
+            <h3>SES High School and Junior College</h3>
+            <p>Thane, Maharashtra<br /><strong>Percentage: 94%</strong></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Learning & credentials</div>
+            <h2>Certifications</h2>
+          </div>
+        </div>
+        <div class="cert-grid">
+          <article class="panel cert-card reveal">
+            <div class="cert-icon">✦</div>
+            <h3>ICATM Paper Publication</h3>
+            <p>HARVESTIFY - ML Based Tool for HomeGardeners & Farmers</p>
+            <a class="small-link"
+              href="https://drive.google.com/file/d/1zX3yRIKegYVKp3sNoPX85GXk8mcWaZ_D/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              View publication ↗
+            </a>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="cert-icon">☁</div>
+            <h3>AWS Academy</h3>
+
+            <p>AWS SimuLearn Cloud Practitioner</p>
+            <a class="small-link"
+              href="https://drive.google.com/file/d/1eSB3LYOIklr-lrWHDa-Qn3uphnlTG0mD/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              View credential ↗
+            </a>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="cert-icon">◎</div>
+            <h3>Coursera — HTML, CSS & JavaScript</h3>
+            <a class="small-link"
+              href="https://drive.google.com/file/d/14tt3BaOs0HC5L5CJVfugNmove3-4Kcsb/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              View credential ↗
+            </a>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="cert-icon">✓</div>
+            <h3>National Level Project Competition — Innovations CSI</h3>
+            <a class="small-link"
+              href="https://drive.google.com/file/d/1coLwHcQbcZis8G4Pm_OUIhjqjWWGujEf/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              View credential ↗
+            </a>
+          </article>
+
+          <article class="panel cert-card reveal">
+            <div class="cert-icon">☁</div>
+            <h3>AWS Academy</h3>
+            <p>AWS Academy Cloud Foundations</p>
+            <a class="small-link"
+              href="https://drive.google.com/file/d/1RQVDVvLWHwKAv5xL_r8Ti0mWQ3xsSGoN/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              View credential ↗
+            </a>
+          </article>
+          <article class="panel cert-card reveal">
+            <div class="cert-icon">◎</div>
+            <h3>Full Stack MEAN Developer · 2022</h3>
+            <a class="small-link"
+              href="https://drive.google.com/file/d/15Z19W2pDaZv1TNIUi1d3xzy02A5nsciz/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer">
+              View credential ↗
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Get in touch</div>
+            <h2>Let's Connect</h2>
+          </div>
+          <p class="section-intro">Always happy to connect with fellow professionals, exchange technical
+            ideas, and discuss software engineering, backend systems, and
+            interesting projects.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="panel contact-copy reveal">
+            <h3 style="margin:0;font-size:20px">Get in touch</h3>
+            <p>Feel free to reach out via email or LinkedIn. I'm always open to
+              meaningful conversations, knowledge sharing, and collaboration
+              on interesting technical ideas.</p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:rohancnashikkar@gmail.com"><span>✉</span>
+                <div><small style="color:var(--muted);display:block">Email</small>rohancnashikkar@gmail.com</div>
+              </a>
+              <a class="contact-link" href="http://www.linkedin.com/in/rohan-nashikkar-314766217" target="_blank"
+                rel="noopener"><span>in</span>
+                <div><small style="color:var(--muted);display:block">LinkedIn</small>linkedin.com/in/rohan</div>
+              </a>
+              <a class="contact-link" href="https://github.com/rohantraining" target="_blank"
+                rel="noopener"><span>⌘</span>
+                <div><small style="color:var(--muted);display:block">GitHub</small>github.com/rohan</div>
+              </a>
+              <a class="contact-link" href="tel:+919820917969"><span>☎</span>
+                <div><small style="color:var(--muted);display:block">Phone</small>+91 98209 17969</div>
+              </a>
+            </div>
+          </div>
+
+          <form class="panel contact-form reveal" id="contactForm" action="https://formspree.io/f/xppqbagn"
+            method="POST">
+            <label for="senderName">Your name</label>
+            <input id="senderName" name="name" type="text" placeholder="Enter your name" required />
+
+            <label for="senderEmail">Your email</label>
+            <input id="senderEmail" name="email" type="email" placeholder="you@example.com" required />
+
+            <label for="senderMessage">Message</label>
+            <textarea id="senderMessage" name="message" placeholder="Hi Rohan, I'd like to discuss..."
+              required></textarea>
+
+            <input type="hidden" name="_subject" value="New portfolio enquiry" />
+
+            <button class="btn btn-primary" type="submit">
+              Send Message ↗
+            </button>
+
+            <p class="form-hint">
+              Your message will be sent to my inbox. Thank you for reaching out!
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner"><span>© <span id="year"></span> Rohan Chandrashekhar Nashikkar. Built with HTML, CSS
+        & JavaScript.</span><a class="backtop" href="#home">Back to top ↑</a></div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    // Mobile navigation
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.textContent = isOpen ? '×' : '☰';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.textContent = '☰';
+    }));
+
+    // Reveal sections as the visitor scrolls; show content immediately if unsupported.
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      revealItems.forEach(item => observer.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('visible'));
+    }
+
+
+    // Independent four-image screenshot sliders for each project card.
+    document.querySelectorAll('[data-gallery]').forEach(gallery => {
+      const track = gallery.querySelector('.gallery-track');
+      const slides = Array.from(track.children);
+      const dots = gallery.querySelector('.gallery-dots');
+      const prev = gallery.querySelector('.prev');
+      const next = gallery.querySelector('.next');
+      let active = 0;
+      slides.forEach((slide, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button'; dot.className = 'gallery-dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Show screenshot ' + (index + 1));
+        dot.addEventListener('click', () => goTo(index));
+        dots.appendChild(dot);
+      });
+      function goTo(index) {
+        active = (index + slides.length) % slides.length;
+        track.scrollTo({ left: slides[active].offsetLeft, behavior: 'smooth' });
+        Array.from(dots.children).forEach((dot, i) => dot.classList.toggle('active', i === active));
+      }
+      prev.addEventListener('click', () => goTo(active - 1));
+      next.addEventListener('click', () => goTo(active + 1));
+      track.addEventListener('scroll', () => {
+        const width = track.clientWidth || 1;
+        const index = Math.round(track.scrollLeft / width);
+        if (index !== active && index >= 0 && index < slides.length) {
+          active = index;
+          Array.from(dots.children).forEach((dot, i) => dot.classList.toggle('active', i === active));
+        }
+      }, { passive: true });
+    });
+    // Prevent placeholder credential links from navigating to the top of the page.
+    document.querySelectorAll('[data-placeholder-link]').forEach(link => link.addEventListener('click', event => {
+      event.preventDefault();
+      document.getElementById('toast').textContent = 'Replace this placeholder with your actual credential URL before publishing.';
+      document.getElementById('toast').classList.add('show');
+      window.setTimeout(() => document.getElementById('toast').classList.remove('show'), 2600);
+    }));
+
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
